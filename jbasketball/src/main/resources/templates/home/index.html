@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"> 
+<meta name="author" content="Joabe Pereira">
+<link rel="stylesheet" th:href="@{css/style.css}">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+<title>Jbasketball</title>
+</head>
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<section class="neo-section" style="background-image: url('img/fundo.png');">
+	
+		<div class="sombra"></div>
+	
+		<div class="center neo-container">
+			<h1 class="texto-centro">Gerenciando Jogos de Basquete</h1>
+			
+			
+			<div class="botoes">
+				<div class="wm">
+					<h5 class="btn">Cadastrar Jogo</h5>
+				</div>
+				<div class="wm">
+					<h5 class="btn justify-content-center">Pesquisar Jogo</h5>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+	</section>
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+
+	
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
