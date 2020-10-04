@@ -15,7 +15,11 @@ public class JogoController {
 	@Autowired
 	private Jogos jogos;
 	
-	//@GetMapping("/inserirJogo")
+	/**
+	 * Método que chama o formulário para cadastro de um jogo
+	 * @param jogo
+	 * @return
+	 */
 	@GetMapping("/jogo/novo")
 	//public ModelAndView inserirJogo(Jogo jogo) {
 	public ModelAndView novo(Jogo jogo) {
@@ -25,19 +29,28 @@ public class JogoController {
 		return mv;
 	}
 	
+	/**
+	 * Método que salva um jogo
+	 * @param jogo
+	 * @return
+	 */
 	@PostMapping("insertJogo")
 	public ModelAndView salvar(Jogo jogo) {
 		ModelAndView mv = new ModelAndView();
-		//mv.setViewName("redirect:/Jogo/listJogos");
-		mv.setViewName("redirect:/lista-jogos");
+		mv.setViewName("redirect:/jogos");
 		jogos.save(jogo);
 		return mv;
 	}
 	
-	@GetMapping("lista-jogos")
+	/**
+	 * Método que apresenta a lista de jogos cadastrados
+	 * @param jogo
+	 * @return
+	 */
+	@GetMapping("/jogos")
 	public ModelAndView lista(Jogo jogo) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("jogo/listJogos");
+		mv.setViewName("jogo/ListaJogos");
 		mv.addObject("jogosList", jogos.findAll());
 		return mv;
 	}

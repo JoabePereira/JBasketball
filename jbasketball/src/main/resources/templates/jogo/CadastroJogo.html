@@ -18,7 +18,7 @@
 	<div class="container">		
 		<form method="post" action="/insertJogo" th:object="${jogo}">
 			<div class="card">
-				<h5 class="card-header">Novo jogo</h5>
+				<h5 class="card-header">Novo jogo <a th:href="@{/jogos}" class="novoJogo">Listagem de jogos</a></h5>
 				<div class="card-body">
 					<div class="row">
 						<div class="form-group col-md-3">
@@ -52,12 +52,14 @@
 							<input id="rMaximo" class="form-control form-control-sm" type="text" th:field="*{quebraRecordeMaximo}">
 						</div>
 					</div>
-					<button class="btn btn-success" type="submit">Salvar</button>
+					<button class="btn btn-primary" type="submit">Salvar</button>
 				</div>
 			</div>
 		</form>
 	</div>
 
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+	
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>

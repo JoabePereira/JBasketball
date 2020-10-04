@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"> 
+<meta name="author" content="Joabe Pereira">
+<link rel="stylesheet" th:href="@{../css/style.css}">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+<title>Lista de Jogos</title>
+</head>
+<body>
+	
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<br>
+	<div class="container">
+		<div class="card">
+			<h5 class="card-header">Listagem de Jogos <a th:href="@{/jogo/novo}" class="novoJogo">Novo jogo</a> </h5>
+			<div class="card-body conteudoTable">
+				<table class="table table-sm table-bordered table-hover">
+					<thead>
+						<th scope="col">Jogo</th>
+						<th scope="col">Placar</th>
+						<th scope="col">Mínimo da temporada</th>
+						<th scope="col">Máximo da temporada</th>
+						<th scope="col">Quebra recorde mínimo</th>
+						<th scope="col">Quebra recorde máximo</th>
+					</thead>
+					<tbody>
+						<tr scope="row" th:each="jogo : ${jogosList}">
+							<td th:text="${jogo.id}"></td>
+							<td th:text="${jogo.placar}"></td>
+							<td th:text="${jogo.minimoTemporada}"></td>
+							<td th:text="${jogo.maximoTemporada}"></td>
+							<td th:text="${jogo.quebraRecordeMinimo}"></td>
+							<td th:text="${jogo.quebraRecordeMaximo}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
