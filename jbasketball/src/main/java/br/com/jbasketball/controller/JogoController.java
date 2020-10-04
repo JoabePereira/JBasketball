@@ -29,8 +29,16 @@ public class JogoController {
 	public ModelAndView salvar(Jogo jogo) {
 		ModelAndView mv = new ModelAndView();
 		//mv.setViewName("redirect:/Jogo/listJogos");
-		mv.setViewName("redirect:/jogo/novo");
+		mv.setViewName("redirect:/lista-jogos");
 		jogos.save(jogo);
+		return mv;
+	}
+	
+	@GetMapping("lista-jogos")
+	public ModelAndView lista(Jogo jogo) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("jogo/listJogos");
+		mv.addObject("jogosList", jogos.findAll());
 		return mv;
 	}
 }
