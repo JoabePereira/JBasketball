@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"> 
+<meta name="author" content="Joabe Pereira">
+<link rel="stylesheet" th:href="@{../css/style.css}">
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+<title>Cadastro de Jogo</title>
+</head>
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<br>
+	<div class="container">		
+		<form method="post" action="/insertJogo" th:object="${jogo}">
+			<div class="card">
+				<h5 class="card-header">Novo jogo</h5>
+				<div class="card-body">
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label for="codigo">Codigo</label>
+							<label for="codigo">#</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label for="placar">Placar</label>
+							<input id="placar" class="form-control form-control-sm" type="text" th:field="*{placar}">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label for="tMinimo">Mínimo da temporada</label>
+							<input id="tMinimo" class="form-control form-control-sm" type="text" th:field="*{minimoTemporada}">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="tMaximo">Máximo da temporada</label>
+							<input id="tMaximo" class="form-control form-control-sm" type="text" th:field="*{maximoTemporada}">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-3">
+							<label for="rMinimo">Recorde mínimo</label>
+							<input id="rMinimo" class="form-control form-control-sm" type="text" th:field="*{quebraRecordeMinimo}">
+						</div>
+						<div class="form-group col-md-3">
+							<label for="rMaximo">Recorde máximo</label>
+							<input id="rMaximo" class="form-control form-control-sm" type="text" th:field="*{quebraRecordeMaximo}">
+						</div>
+					</div>
+					<button class="btn btn-success" type="submit">Salvar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
