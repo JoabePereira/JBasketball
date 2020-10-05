@@ -7,4 +7,4 @@ O objetivo desse sistema é cadastrar jogos de basquete. De acordo com a pontua�
 
 **2 - Como executar**
 
-O sistema foi feito utilizando Java com Spring Framework. A aplicação não foi publicada, então, basicamente é necessário criar o banco de dados "jbasketball" no MySQL, fazer download do projeto através do link (https://github.com/JoabePereira/JBasketball), importar para o Spring Too Suite e executar.
+O sistema foi feito utilizando Java com Spring Framework. A aplicação não foi publicada, então, basicamente é necessário criar o banco de dados "jbasketball" no MySQL, fazer download do projeto através do link (https://github.com/JoabePereira/JBasketball), descompactar o arquivo zip baixado e importar o projeto em Jbasketball-man/jbasketball para o Spring Too Suite e executar.
