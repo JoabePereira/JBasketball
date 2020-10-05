@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
 
 @Entity
 public class Jogo {
@@ -14,6 +15,7 @@ public class Jogo {
 	private Long id;
 	
 	@Column(name = "placar")
+	//@Max(value = 999, message = "O valor deve ser menor que 1000")
 	private int placar;
 	
 	@Column(name = "min_temporada")

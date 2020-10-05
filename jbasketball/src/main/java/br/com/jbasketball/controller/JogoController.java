@@ -2,6 +2,9 @@ package br.com.jbasketball.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,7 +24,6 @@ public class JogoController {
 	 * @return
 	 */
 	@GetMapping("/jogo/novo")
-	//public ModelAndView inserirJogo(Jogo jogo) {
 	public ModelAndView novo(Jogo jogo) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("jogo/CadastroJogo");
@@ -34,11 +36,12 @@ public class JogoController {
 	 * @param jogo
 	 * @return
 	 */
-	@PostMapping("insertJogo")
+	@PostMapping("/jogos")
 	public ModelAndView salvar(Jogo jogo) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/jogos");
 		jogos.save(jogo);
+		mv.setViewName("redirect:/jogos");				
+		
 		return mv;
 	}
 	
